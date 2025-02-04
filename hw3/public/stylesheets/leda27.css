@@ -1,0 +1,117 @@
+/* Daniel Le */
+body {
+  background-color: lightblue;
+  font-family: "Times New Roman", sans-serif; /*select font and have backup*/
+}
+
+/*align to center and make the font look bigger and more presentable*/
+h1 {
+  text-align: center;
+  font-size: 40px;
+  color: black;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
+img {
+  margin: 20px auto;
+  display: block; /*block level element to be centered*/
+  border-radius: 8px;
+}
+
+/*change the size of the bottom section and center it*/
+.form-container {
+  width: 600px;
+  background-color: gainsboro;
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 8px; /*rounded corners*/
+}
+
+p {
+  font-family: "calibri", sans-serif;
+  font-style: italic;
+  font-size: 18px;
+  color: black;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+/*create good spacing for all elements that is within the form-container*/
+select {
+  margin-top: 20px;
+}
+
+textarea {
+  width: 90%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: green;
+  color: white;
+}
+
+button:hover {
+  background-color: gray;
+}
+
+.order-History {
+  margin-top: 20px;
+  color: black;
+}
+
+h2 {
+  font-family: "Courier New", sans-serif;
+  font-size: 24px;
+  color: black;
+  margin-bottom: 5px;
+}
+
+li {
+  font-size: 18px;
+}
+
+form {
+  float: right;
+  margin-right: 450px;
+}
+
+/* starter code source: https://www.w3schools.com/css/css_dropdowns.asp */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn{
+ background-color: lightblue;
+}
+
+.dropdown-content {
+  display: none; /* hide dropdown */
+  position: absolute;
+  background-color: white;
+  max-height: 100px;
+  overflow-y: auto; /* add scrolling to the list */
+  width: 100px;
+}
+
+/* show dropdown when hovered over */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* text for months of the list */
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  margin: 20px auto;
+  display: block;
+  font-size: 18px;
+}
+
+/* change color when hovering over months*/
+.dropdown-content a:hover {
+  background-color: whitesmoke;
+}

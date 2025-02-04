@@ -1,0 +1,104 @@
+<!-- Daniel Le -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeWork 2</title>
+    <link rel="stylesheet" href="./stylesheets/leda27.css" />
+  </head>
+  <body>
+    <h1>CheeseCake Order Form</h1>
+    <!-- img of the cheesecake to be above everything -->
+    <img src="https://media-cdn.tripadvisor.com/media/photo-s/0c/9a/5e/c6/delicioso-cheese-cake.jpg" alt="cheesecake"/>
+
+    <!-- Container having all radio buttons, text area, headers, etc -->
+    <div class="form-container">
+      <!-- Control the toppings section -->
+
+      <div class="Toppings">
+        <p>Quantity Topping</p>
+        <select>
+          <option>3</option>
+          <option>2</option>
+          <option>1</option>
+        </select>
+        <!-- create radio buttons to show each topping -->
+        <form>
+          <label> <input type="radio" name="topping" /> Plain </label><br />
+          <label> <input type="radio" name="topping" /> Cherry </label><br/>
+          <label> <input type="radio" name="topping" /> Chocolate </label><br />
+        </form>
+      </div>
+      <br />
+
+      <!-- create the notes section -->
+      <p id="notes">Notes:</p>
+      <textarea
+        placeholder="Enter any special instructions here." rows="5" cols="50"></textarea>
+      <br />
+      <button id="orderButton">Order</button>
+
+      <!-- create order history section -->
+      <div class="order-History">
+        <h2>Orders for
+          <div class="dropdown">
+            <span class="dropbtn">Jan</span> <!--place holder-->
+            <div class="dropdown-content">
+              <a href="#" data-month="Jan">Jan</a>
+              <a href="#" data-month="Feb">Feb</a>
+              <a href="#" data-month="Mar">Mar</a>
+              <a href="#" data-month="Apr">Apr</a>
+              <a href="#" data-month="May">May</a>
+              <a href="#" data-month="Jun">Jun</a>
+              <a href="#" data-month="Jul">Jul</a>
+              <a href="#" data-month="Aug">Aug</a>
+              <a href="#" data-month="Sep">Sep</a>
+              <a href="#" data-month="Oct">Oct</a>
+              <a href="#" data-month="Nov">Nov</a>
+              <a href="#" data-month="Dec">Dec</a>
+            </div>
+          </div>
+        </h2>
+        <!-- create list of past orders -->
+        <li>11 cherry</li>
+        <li>17 chocolate</li>
+        <li>31 plain</li>
+      </div>
+    </div>
+
+    <script>
+      $("#orderButton").click(function() {
+        // get the values for each input
+        var notes = $("textarea").val().toLowerCase();
+        var quantity = $("select").val();
+        var topping = $("input[name='topping']:checked").parent().text();
+
+        // check if notes contain "vegan"
+        if (notes.includes("vegan")) {
+          alert("Warning: The cheesecakes contain dairy.");
+        } 
+        else {
+           // replace content with order information
+          $(".form-container").html(
+          "<p>Thank you! Your order has been placed.</p>" +
+          "<p>Topping: " + topping + "</p>" +
+          "<p>Quantity: " + quantity + "</p>" +
+          "<p>Notes: " + notes + "</p>"
+          );
+        }
+      });
+
+        $(".dropdown-content a").click(function() {
+          // get the word that was clicked
+          var selectedMonth = $(this).attr("data-month");
+
+          // replace word at placeholder
+          $(".dropbtn").text(selectedMonth);
+        });
+    </script>
+  </body>
+</html>
