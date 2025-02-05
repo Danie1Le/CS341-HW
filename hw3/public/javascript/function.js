@@ -1,3 +1,4 @@
+// Daniel Le
 $("#orderButton").click(function() {
     // get the values for each input
     var notes = $("textarea").val().toLowerCase();
