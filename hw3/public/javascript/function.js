@@ -26,4 +26,18 @@ $("#orderButton").click(function() {
 
       // replace word at placeholder
       $(".dropbtn").text(selectedMonth);
+
+      // make POST request to server
+    $.post("/orders", { month: selectedMonth }, function(data) {
+      // clear existing orders
+      $(".order-History li").remove();
+      
+        // add new orders from response
+        data.forEach(function(order) {
+            $(".order-History").append(
+                `<li>${order.quantity} ${order.topping}</li>`
+            );
+        });
     });
+    });
+
